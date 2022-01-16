@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <title>gitテスト用</title>
+  <style>
+    .jjj {
+      font-size: 50px;
+      background-color: cadetblue !important;
+      transform: rotate(360deg);
+    }
+
+    .fff {
+      transition: .7s;
+      cursor: pointer;
+    }
+
+    .kkk {
+      font-size: 50px;
+      background-color: cornflowerblue !important;
+      transform: scale(1.2);
+    }
+
+    #output {
+      transition: .7s;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="main-area" style="display: flex; justify-content: center; flex-flow: column; align-items: center;">
+    <div class="fff" id="aaa"
+      style="height: 500px; width: 500px; background-color: tomato; color: #fff; text-align: center; line-height: 480px; border-radius: 100px; margin-top: 70px;">
+      submit!!!</div>
+    <div class="form-example" style="margin-top: 40px;">
+      <label for="mes">Enter message: </label>
+      <input type="text" name="mes" id="mes" required>
+      <input type="button" value="send" id="checkButton">
+    </div>
+    <div id="output"
+      style="width: 500px; height: 100px; font-size: 16px; background-color: gray;  margin-top: 50px; line-height: 100px; text-align: center; color: #fff; border-radius: 40px;">
+      no message</div>
+  </div>
+
+  <script>
+    {
+      const ggg = document.getElementById('aaa');
+      console.log(ggg.style.backgroundColor);
+      ggg.addEventListener('click', () => {
+        ggg.classList.toggle('jjj');
+      })
+
+      class Post {
+        constructor(message) {
+          this.text = message;
+          this.count = 0;
+        }
+        show() {
+          console.log(`${this.text}---${this.count}`);
+        }
+      }
+
+      const posts = [
+        new Post('hello!!!'),
+        new Post('bye')
+      ];
+
+      posts[0].show();
+      posts[1].show();
+
+
+      const mes = document.getElementById('mes');
+      const out = document.getElementById('output');
+      const gf = document.getElementById('checkButton');
+
+      function click() {
+        out.innerText = mes.value;
+        console.log(mes.value);
+      }
+
+      out.addEventListener('click', () => {
+        out.classList.toggle('kkk');
+      })
+
+
+      class dddd {
+        constructor(hi, num) {
+          this.hi = hi;
+          this.num = num;
+        }
+
+        klk() {
+          console.log(mes.value);
+          gf.addEventListener('click', click);
+        }
+
+        ssss() {
+          console.log(`${this.hi} - thanks!`);
+        }
+
+        kkkk() {
+          ggg.addEventListener('click', () => {
+            this.num++;
+            console.log(this.num);
+          })
+        }
+
+        static hhhhh() {
+          console.log('静的メソッドです。');
+        }
+      }
+
+
+
+      new dddd('shintaro').ssss();
+      new dddd('shintaro').klk();
+      new dddd('こんにちは', 0).kkkk();
+      dddd.hhhhh();
+
+
+
+    }
+  </script>
+</body>
+
+</html>
